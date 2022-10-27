@@ -4,7 +4,13 @@ public class MassimoInteroRicorsivo {
 
   public int massimoElementoR (int n, int m){
     // calcolare massimo tra n e m ricorsivamente
-    return m;
+    if (n == 0)
+	    return m;
+    else if (m == 0)
+	    return n;
+
+    return massimoElementoR (n-1, m-1);
+    
   }
 	public static void main (String[] args) {		
     Scanner sc = new Scanner(System.in);
