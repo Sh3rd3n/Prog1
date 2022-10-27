@@ -1,10 +1,14 @@
 import java.util.Scanner;
 
 public class StringaMax {
+	public static String maxLengthStr (String s1, String s2) {
+		if(s1.length() > s2.length())
+				return s1;
+			return s2;
+	}
 	
 	public static void main (String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int n, max = 0;
 		String s, maxs = "";
 		int cnt = 0;
 		boolean continua = true;
@@ -13,22 +17,18 @@ public class StringaMax {
 		
 		do {
 			s = sc.nextLine();
-			n = s.length();
 			
-			if (n==0) continua = false;
+			if (s.length() == 0) continua = false;
 			else {
 				cnt++;
-				if (n > max) {
-					maxs = s;
-					max = n;
-				}
+				maxs = maxLengthStr(s, maxs);
 			}
 			//System.out.println("ho scritto " (int)n + " " + s);
 			
 		} while (continua == true);	
 
 		if(cnt>0)
-			System.out.println("La stringa di lunghezza massima è " + maxs);
+			System.out.println("La stringa di lunghezza massima è '" + maxs + "'");
 		else System.out.println("Non hai inserito stringhe valide.");
 	}	
 }

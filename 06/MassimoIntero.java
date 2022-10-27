@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class MassimoIntero {
 
+		public static int massimo(int n, int m){
+			if(n > m)
+				return n;
+			return m;
+		}
 	public static void main (String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int max = 0, x;
@@ -11,9 +16,10 @@ public class MassimoIntero {
 		
 		do {
 			x = sc.nextInt();
-			if (x > 0) ins = true;
-			if (x > max)	
-				max = x;
+			if (x > 0) {
+				ins = true;
+				max = massimo(x, max);
+			}
 			
 		} while (x > 0);	
 
